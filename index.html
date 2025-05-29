@@ -257,7 +257,7 @@
       
 
       <div class="content has-text-centered mb-6">
-        <h1 class="title is-size-2-tablet has-text-weight-bold has-background-info-light mr-0 pt-3 pb-3">Data Collection</h1>
+        <h1 class="title is-size-2-tablet has-text-weight-bold mr-0 pt-3 pb-3">Data Collection</h1>
         <p class="is-size-5-tablet">
           To train RefVNLI, we collect a large scale dataset of <i>&lt; Image<sub>ref</sub> , prompt , Image<sub>tgt</sub> &gt;</i> triplets, each with two binary labels: one for <b>subject preservation</b> of <i>Image<sub>ref</sub></i> in <i>Image<sub>tgt</sub></i> , and one for <b>textual alignment</b> between the <i>prompt</i> and <i>Image<sub>tgt</sub></i> .
           This involves first creating subject-driven <i>{ Image<sub>ref</sub> , Image<sub>tgt</sub> }</i> pairs, followed by automatic generation of subject-focused <i>prompts</i> for each <i>Image<sub>tgt</sub></i> .
@@ -267,10 +267,10 @@
 
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info has-text-white mr-0 pt-3 pb-3">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light has-text-white mr-0 pt-3 pb-3">
            1. Subject-drive Image-pairs:<br><u>Robustness</u> to Identity-agnostic Changes
            </h2>
-         <h3 class="subtitle is-size-4-tablet has-text-centered has-background-info-light pr-4 pl-4 pt-3 pb-3">
+         <h3 class="subtitle is-size-4-tablet has-text-centered pr-4 pl-4 pt-3 pb-3">
           <p>
             To ensure our <i>{ Image<sub>ref</sub> , Image<sub>tgt</sub> }</i> dataset is robust to identity-agnostic changes (e.g., pose, clothing, or lighting changes), we use video-based datasets that inherently capture these differences.
             Specifically, given two pairs of frames, each extracted from distinct video scenes featuring the same entity (e.g.,<i>a</i> dog), where both frames within each pair depict the same subject (e.g., <i>the same</i> dog), we curate training <i>{ Image<sub>ref</sub> , Image<sub>tgt</sub> }</i> pairs for subject preservation classification.
@@ -286,10 +286,10 @@
       </div>
 
       <div class="item">
-        <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info has-text-white mr-0 pt-3 pb-3">
+        <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light has-text-white mr-0 pt-3 pb-3">
           2. Subject-drive Image-pairs:<br><u>Sensitivity</u> to Identity-specific Attributes
           </h2>
-        <h3 class="subtitle is-size-4-tablet has-text-centered has-background-info-light pr-4 pl-4 pt-3 pb-3">
+        <h3 class="subtitle is-size-4-tablet has-text-centered pr-4 pl-4 pt-3 pb-3">
          <p>
           To further enhance sensitivity to identity-specific attributes, such as facial features in humans or shapes and patterns in objects, we apply fine-grained corruptions on identity-defining visual attributes for additional hard-negatives.
           Starting with an image and a mask of a subject (e.g., a bag), we randomly keep 5 patches within the masked area ([1]) and use them to create 5 inpainted versions ([2]). 
@@ -304,10 +304,10 @@
      </div>
 
      <div class="item">
-      <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info has-text-white mr-0 pt-3 pb-3">
+      <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light has-text-white mr-0 pt-3 pb-3">
         3. Image-prompt Pairs
         </h2>
-      <h3 class="subtitle is-size-4-tablet has-text-centered has-background-info-light pr-4 pl-4 pt-3 pb-3">
+      <h3 class="subtitle is-size-4-tablet has-text-centered pr-4 pl-4 pt-3 pb-3">
        <p>
         For each <i>{ Image<sub>ref</sub> , Image<sub>tgt</sub> }</i> pair, we generate positive and negative <i>prompts</i> for Image<sub>tgt</sub> .
         Specifically, given an image with some subject (e.g., a dog), we create a <b>positive prompt</b> by adding a bounding box around the subject and directing an LLM to describe it (top prompts). <b>Negative prompts</b> are created by swapping prompts between images of the same entity (middle prompts). For additional <b>hard negatives</b>, we guide an LLM to modify a single non-subject detail in the positive prompts while keeping the rest unchanged (bottom prompts).
@@ -334,7 +334,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Qualitative Results</h2>
-        <div class="content has-text-justified">
+        <div class="content has-text-centered">
           <p>
             We compare RefVNLI with DreamBench++ (a metric that relies on API calls to LLMs) and CLIP (an embedding-based metric), both for <b>Subject Preservation (SP)</b> and for <b>Textual Alignment (TA)</b>. 
             RefVNLI exhibits better robustness to identity-agnostic changes (SP), such as the zoomed-out parrot (top-middle) and the zoomed-out person with different attire (bottom-middle).  It is also more sensitive to identity-defining traits, penalizing changed facial features (left-most person) and mismatched object patterns (left and middle balloons).    

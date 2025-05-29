@@ -256,7 +256,7 @@
     <div class="container">
       
 
-      <div class="content has-text-centered mb-6">
+      <div class="content has-text-centered">
         <h1 class="title is-size-2-tablet has-text-weight-bold mr-0 pt-3 pb-3">Data Collection</h1>
         <p class="is-size-5-tablet">
           To train RefVNLI, we collect a large scale dataset of <i>&lt; Image<sub>ref</sub> , prompt , Image<sub>tgt</sub> &gt;</i> triplets, each with two binary labels: one for <b>subject preservation</b> of <i>Image<sub>ref</sub></i> in <i>Image<sub>tgt</sub></i> , and one for <b>textual alignment</b> between the <i>prompt</i> and <i>Image<sub>tgt</sub></i> .
@@ -335,7 +335,32 @@
             Additionally, RefVNLI excels at detecting text-image mismatches (TA), as seen in its penalization of the top-left image for lacking a waterfall.
             <br><br>
             <div style="text-align: center;">
-             <img src="static/images/qualitative_examples_text_and_image.png"  style="width: 80%; height: 80%"/>
+             <img src="static/images/qualitative_examples_text_and_image.png"  style="width: 100%; height: 100%"/>
+           </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Rare Entities -->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-size-2-tablet has-text-weight-bold">Rare Entities</h1>
+        <div class="content has-text-centered">
+          <p>
+            We test RefVNLI's ability to assess uncommon subjects (e.g., scientific animal names, lesser-known dishes). 
+            For that, we employ a dataset where human annotators compared image pairs, selecting the better one based on <b>Textual Alignment (TA)</b>, <b>Visual Quality (IQ)</b> (evaluating general depiction of the <i>entity</i> rather than exact reference-adherence), and <b>Overall Preference (OP)</b>. 
+            We compare RefVNLI with CLIP and DreamBench++ in aligning with human preferences (top rows of each example).
+            The higher of the two criterion-wise scores is emphasized unless both are equal. 
+            RefVNLI consistently aligns with human judgments across all three criteria.
+            <br><br>
+            <div style="text-align: center;">
+             <img src="static/images/rare_entities_ImageRAG.png"  style="width: 100%; height: 100%"/>
            </div>
           </p>
         </div>

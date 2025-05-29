@@ -268,12 +268,12 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
          <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info has-text-white mr-0 pt-3 pb-3">
-           Subject-drive Image-pairs:<br>Robustness to Identity-agnostic Changes.
+           Subject-drive Image-pairs:<br>Robustness to Identity-agnostic Changes
            </h2>
-         <h3 class="subtitle is-size-4-tablet has-text-left has-background-info-light pr-4 pl-4 pt-3 pb-3">
+         <h3 class="subtitle is-size-4-tablet has-text-centered has-background-info-light pr-4 pl-4 pt-3 pb-3">
           <p>
             To ensure our <i>{ Image<sub>ref</sub> , Image<sub>tgt</sub> }</i> dataset is robust to identity-agnostic changes (e.g., pose, clothing, or lighting changes), we use video-based datasets that inherently capture these differences.
-            Specifically, given two pairs of frames, each extracted from distinct video scenes featuring the same entity (e.g.,<i>a</i> dog), where both frames within each pair depict the same subject (e.g., <i>the same</i> dog), we construct training <i>{ Image<sub>ref</sub> , Image<sub>tgt</sub> }</i> pairs for subject preservation classification.
+            Specifically, given two pairs of frames, each extracted from distinct video scenes featuring the same entity (e.g.,<i>a</i> dog), where both frames within each pair depict the same subject (e.g., <i>the same</i> dog), we curate training <i>{ Image<sub>ref</sub> , Image<sub>tgt</sub> }</i> pairs for subject preservation classification.
             <b>Positive pairs</b> are formed by pairing a cropped subject from one frame (e.g., dog from left frame in Scene 1) with the full frame from the same scene (right frame in Scene 1). In contrast, <b>negative pairs</b> are created by pairing the cropped subject with the other scene's full frames (e.g., Scene 2). 
             This process is applied to all four frames, with each taking turns as the cropped reference image (<i>Image<sub>ref</sub></i>), while the corresponding full-frame counterparts serve as <i>Image<sub>tgt</sub></i>, yielding a total of 4 positive and 8 negative training pairs.
             In total, we collected 338,551 image pairs from 44,418 unique frames.
@@ -285,29 +285,26 @@
          </h3>
       </div>
 
+
+
       <div class="item">
-        <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
-          The Fusion-in-Context Task
+        <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info has-text-white mr-0 pt-3 pb-3">
+          Subject-drive Image-pairs:<br>Sensitivity to Identity-specific Attributes
           </h2>
-        <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
-        <p>
-          The <i>Fusion in Context</i> (FiC) task involves synthesizing a coherent text 
-          from a given set of documents, specifically focusing on pre-selected spans within these documents, 
-          referred to as <i>highlights</i>. 
-          Formally, for a collection of documents D with marked spans H={h_1, h_2, ..., h_n}, 
-          where each h_i could be disjoint, the goal is to produce a coherent and non-redundant text f
-          adhering to the following two criteria: 
-          <ol class="pr-2 pl-6">
-            <li><u>Highlight Faithfulness</u>: f must be collectively entailed by the content in H, adding only minimal non-highlighted content required for coherence.</li>
-            <li><u>Highlight Coverage</u>: each h_i must be represented in f, either explicitly, or via a generalized reference.</li>
-          </ol>          
+        <h3 class="subtitle is-size-4-tablet has-text-centered has-background-info-light pr-4 pl-4 pt-3 pb-3">
+         <p>
+          To further enhance sensitivity to identity-specific attributes, such as facial features in humans or shapes and patterns in objects, we apply fine-grained corruptions on identity-defining visual attributes for additional hard-negatives.
+          Starting with an image and a mask of a subject (e.g., a bag), we randomly keep 5 patches within the masked area ([1]) and use them to create 5 inpainted versions ([2]). 
+          The version with the highest MSE between the altered and original areas (e.g., bottom image, MSE = 3983) is paired with the <i>unmodified</i> crop to form a <b>negative pair</b>, while the original image and the same crop create a <b>positive pair</b>, with the crop acting as Image<sub>ref</sub> in both cases.
+          This process yields extra 16,572 pairs.
           <br><br>
-          <div style="text-align: center;">
-           <img src="static/images/task_example.PNG"  style="width: 50%; height: 50%"/>
-         </div>
-        </p>
+           <div style="text-align: center;">
+            <img src="static/images/scraping_videos.png"  style="width: 100%; height: 100%"/>
+          </div>
+         </p>
         </h3>
      </div>
+
 
       <div class="item">
          <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">

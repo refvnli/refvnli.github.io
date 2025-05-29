@@ -270,8 +270,7 @@
          <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
            1. Subject-drive Image-pairs:<br><u>Robustness</u> to Identity-agnostic Changes
            </h2>
-         <h3 class="subtitle is-size-4-tablet has-text-centered pr-4 pl-4 pt-3 pb-3">
-          <p>
+           <p class="content has-text-centered pr-4 pl-4 pt-3 pb-3">
             To ensure our <i>{ Image<sub>ref</sub> , Image<sub>tgt</sub> }</i> dataset is robust to identity-agnostic changes (e.g., pose, clothing, or lighting changes), we use video-based datasets that inherently capture these differences.
             Specifically, given two pairs of frames, each extracted from distinct video scenes featuring the same entity (e.g.,<i>a</i> dog), where both frames within each pair depict the same subject (e.g., <i>the same</i> dog), we curate training <i>{ Image<sub>ref</sub> , Image<sub>tgt</sub> }</i> pairs for subject preservation classification.
             <b>Positive pairs</b> are formed by pairing a cropped subject from one frame (e.g., dog from left frame in Scene 1) with the full frame from the same scene (right frame in Scene 1). In contrast, <b>negative pairs</b> are created by pairing the cropped subject with the other scene's full frames (e.g., Scene 2). 
@@ -282,15 +281,13 @@
              <img src="static/images/scraping_videos.png"  style="width: 60%; height: 60%"/>
            </div>
           </p>
-         </h3>
       </div>
 
       <div class="item">
         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
           2. Subject-drive Image-pairs:<br><u>Sensitivity</u> to Identity-specific Attributes
           </h2>
-        <h3 class="subtitle is-size-4-tablet has-text-centered pr-4 pl-4 pt-3 pb-3">
-         <p>
+          <p class="content has-text-centered pr-4 pl-4 pt-3 pb-3">
           To further enhance sensitivity to identity-specific attributes, such as facial features in humans or shapes and patterns in objects, we apply fine-grained corruptions on identity-defining visual attributes for additional hard-negatives.
           Starting with an image and a mask of a subject (e.g., a bag), we randomly keep 5 patches within the masked area ([1]) and use them to create 5 inpainted versions ([2]). 
           The version with the highest MSE between the altered and original areas (e.g., bottom image, MSE = 3983) is paired with the <i>unmodified</i> crop to form a <b>negative pair</b>, while the original image and the same crop create a <b>positive pair</b>, with the crop acting as Image<sub>ref</sub> in both cases.
@@ -300,15 +297,13 @@
             <img src="static/images/corrupting_images.png"  style="width: 60%; height: 60%"/>
           </div>
          </p>
-        </h3>
      </div>
 
      <div class="item">
       <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
         3. Image-prompt Pairs
         </h2>
-      <h3 class="subtitle is-size-4-tablet has-text-centered pr-4 pl-4 pt-3 pb-3">
-       <p>
+        <p class="content has-text-centered pr-4 pl-4 pt-3 pb-3">
         For each <i>{ Image<sub>ref</sub> , Image<sub>tgt</sub> }</i> pair, we generate positive and negative <i>prompts</i> for Image<sub>tgt</sub> .
         Specifically, given an image with some subject (e.g., a dog), we create a <b>positive prompt</b> by adding a bounding box around the subject and directing an LLM to describe it (top prompts). <b>Negative prompts</b> are created by swapping prompts between images of the same entity (middle prompts). For additional <b>hard negatives</b>, we guide an LLM to modify a single non-subject detail in the positive prompts while keeping the rest unchanged (bottom prompts).
         In total, combining this step with the two image-pairing steps yields 1.2 million <i>&lt; Image<sub>ref</sub> , prompt , Image<sub>tgt</sub> &gt;</i> triplets labeled for <i>textual alignment</i> and <i>subject preservation</i>.
@@ -317,7 +312,6 @@
           <img src="static/images/caption_generation.png"  style="width: 50%; height: 50%"/>
         </div>
        </p>
-      </h3>
    </div>
   </div>
 </div>

@@ -267,15 +267,18 @@
 
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
-           Abstract
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info has-text-white mr-0 pt-3 pb-3">
+           Subject-drive Image-pairs: Robustness to identity-agnostic Changes.
            </h2>
          <h3 class="subtitle is-size-4-tablet has-text-left has-background-info-light pr-4 pl-4 pt-3 pb-3">
-         <p>
-          Grounded text generation, encompassing tasks such as long-form question-answering and summarization, necessitates both content selection and content consolidation. Current end-to-end methods are difficult to control and interpret due to their opaqueness.
-          Accordingly, recent works have proposed a modular approach, with separate components for each step. Specifically, we focus on the second subtask, of generating coherent text given pre-selected content in a multi-document setting. Concretely, we formalize <i>Fusion-in-Context</i> (FiC) as a standalone task, whose input consists of source texts with highlighted spans of targeted content. A model then needs to generate a coherent passage that includes all and only the target information.
-          Our work includes the development of a curated dataset of 1000 instances in the reviews domain, alongside a novel evaluation framework for assessing the faithfulness and coverage of highlights, which strongly correlate to human judgment. Several baseline models exhibit promising outcomes and provide insightful analyses.
-          This study lays the groundwork for further exploration of modular text generation in the multi-document setting, offering potential improvements in the quality and reliability of generated content.         </p>
+          <p>
+            To ensure our <i>{ Image<sub>ref</sub> , Image<sub>tgt</sub> }</i> dataset is robust to identity-agnostic changes (e.g., pose, clothing, or lighting changes), we use video-based datasets that inherently capture these differences.
+            
+            <br><br>
+            <div style="text-align: center;">
+             <img src="static/images/scraping_videos.png"  style="width: 50%; height: 50%"/>
+           </div>
+          </p>
          </h3>
       </div>
 

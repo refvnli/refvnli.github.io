@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Review</title>
+    <style>
+        body { 
+			font-family: Arial, sans-serif; 
+			display: flex; 
+			justify-content: center; /* This will center the .reviews container on the screen */
+			align-items: flex-start;
+			height: 100vh;
+			 margin: 2px; /* Remove default margin */
+			}
+			
+        .highlight { background-color: yellow; 
+					 color: black !important; /* Dark grey for muted text */
+					 cursor: pointer;}
+        .not-hover-highlight { background-color: lightyellow; 
+							color: #606060 !important; /* Dark grey for muted text */}
+        .summary {
+			width: 30%; 
+			font-size: 1.0rem; 
+			padding: 10px; 
+			height: 40vh; /* Maximum height to a third of the viewport height */
+			background-color: #9e9e9e0a;
+		}
+        .reviews {
+			width: 50%;
+			font-size: 0.7rem;
+			display: flex;
+			flex-wrap: wrap;
+			padding: 10px;
+			max-height: 40vh; /* Maximum height to a third of the viewport height */
+			overflow-y: auto; /* Enable vertical scrolling */
+			background-color: #9e9e9e0a; /* Light grey background */
+		}
+        .text-box { 
+            width: calc(100% - 20px); /* Adjust based on padding */
+            margin: 10px;
+            padding: 10px; 
+            background-color: #9e9e9e0a; /* Light grey background */
+			color: #606060bf;
+            border: 2px solid #ddd; /* Cartoonish border */
+            border-radius: 20px; /* Rounded corners for cartoonish effect */
+            position: relative; 
+            box-shadow: 3px 3px #bbb; /* Soft shadow for depth */
+        }
+        .text-box:before { 
+            content: ''; 
+            position: absolute; 
+            right: 100%; 
+            bottom: 20%; 
+            border-top: 10px solid transparent; 
+            border-bottom: 10px solid transparent; 
+            border-right: 10px solid #ddd; /* Arrow matching the border */
+        }
+		.summary-box {
+			padding: 10px;
+			margin: 10px 0;
+			background-color: #e6e6fa; /* Lavender background for a pleasant look */
+			border: 1px solid #ddd; /* Light border for definition */
+			border-radius: 5px; /* Slightly rounded corners */
+			box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Soft shadow for depth */
+			cursor: pointer;
+		}
+        h4 { margin-top: 0; }
+    </style>
+</head>
+<body>
+<div class='column reviews'><h2>Reviews</h2><div class='text-box'>This is the third time over the past 10 years we have stayed here, and although not particularly fancy, I think it is pretty reasonable for the money compared to most hotels, hence the above average rating because of value for money. That aside it is probably a middle of the road property. Pretty good location, and <span class='review-span highlight' data-aligned-summaries='1'>have never had any problems with the staff</span>, cleanliness of rooms etc. Only continuing problem is the strip of marble on the floor separating the main room with the bathroom. It is quite high and is a real killer on the toes if you are not careful ! If we go back to Singapore we will stay here again as long as the Singapore Stopover continues to be a good deal.</div><div class='text-box'>Stayed here as a Singapore Airlines stopover on the way to Europe and was happy with the hotel. <span class='review-span highlight' data-aligned-summaries='1'>When we arrived early in the morning we</span> had to wait for a few hours until checkin, but <span class='review-span highlight' data-aligned-summaries='1'>were still allowed to checkin around 9am which was quite a few hours before their official time</span>. Room aircon was quite cold and the room was quite reasonably sized and clean. Was close to all attractions, and there was a 7-11 just next door for some cheap drinks other than the mini bar. Didn't eat in any of the restaurants as other alternatives close by. Overall quite a good hotel for the money, certainly not luxurious but either was the price.</div><div class='text-box'>My family and I stayed at this hotel for under a week and the hotel amenities were ok but not great. One of the things that really annoyed me was the use of the internet in which you had to put a down payment of $10 on a LAN line cable to connect to a port hole with unreliable service, spending at least an hour just to connect! Not only that, the rooms would always be too cold once we got back even though the key wasn't plugged into the power system. <span class='review-span highlight' data-aligned-summaries='1'>Most of the staff were nice and friendly and offered great eatery suggestions if you asked</span>.</div><div class='text-box'>I stayed in the grand pacific for 5 nights. The hotel is smart.and clean. They are cleaning and upgrading the exterior which looks good but I felt the room I was in was still dated. I was in a no smoking room but the room clearly had been smoked in for a long time previously as you could still smell it. The pool is wonderful and very clean. <span class='review-span highlight' data-aligned-summaries='1'>The staff were very friendly</span>. I didn't use the restraint but the bar on the ground floor was good with nice food. Overall a nice hotel about 2 minutes walk from raffles but needs the rooms to be modernised.</div><div class='text-box'>I stayed at this hotel after picking it from many I reviewed on Travel Advisor. I arrived on Mon pm from a flight from Beijing and was quickly processed into my room. I was extremely happy with my room. I had meals in The Brasserie because this is what my Package included. <span class='review-span highlight' data-aligned-summaries='1'>The service was prompt and the staff eager to help and also very friendly</span>. <span class='review-span highlight' data-aligned-summaries='0'>The hotel is central and close to MRT stations</span> at Bungis and City Hall. There is a Burger King and a 7 Eleven store nearby so this is also a bonus.</div><div class='text-box'>This hotel was very clean, roomy and comfortable. Excellent buffet for breakfast & dinner and a la carte lunch available, all at very reasonable prices and much-needed air-conditioned comfort! 7Eleven store right next door sold bottled water at half the price in the hotel itself (a 'must' in the humidity ). Had very cheap umbrellas for the afternoon rains as well ! The only disappointment after a long flight was the fact that only two teabags were supplied- any more was charged at $1 per bag!</div><div class='text-box'>We would recommend this hotel to anyone, we stayed for 8 nights and received <span class='review-span highlight' data-aligned-summaries='1'>the best quality service from happy , helpful staff</span>. All staff members from any department were excellent, we can not say enought about how good this hotel is. Location in Singapore was ideal, close to every thing.</div><div class='text-box'><span class='review-span highlight' data-aligned-summaries='0'>This hotel is well positioned near</span> Raffles Centre and <span class='review-span highlight' data-aligned-summaries='0'>the MRT</span>. I have been staying here over the last 15 years and the rooms really need renovating.You need to get it at a good price.</div></div><div class='column summary'><h4>Summary</h4><div class='summary-box'><span id="0" class="summary-sentence">The hotel is closely located to the MRT.</span> <span id="1" class="summary-sentence">The service from the staff here is unbeatable as they are all very friendly and love to offer suggestions when asked.</span> </div></div>
+<script>
+    document.querySelectorAll('.summary-sentence').forEach(sentence => {
+        sentence.addEventListener('mouseenter', function() {
+            const summaryId = this.getAttribute('id');
+			document.querySelectorAll('.review-span').forEach(span => {
+				if (!span.getAttribute('data-aligned-summaries').split(' ').includes(summaryId)) {
+					span.classList.remove('highlight');
+					span.classList.add('not-hover-highlight');
+					console.log('entered!');
+				}
+			});
+			this.classList.add('highlight');
+        });
+		
+		sentence.addEventListener('mouseleave', function() {
+            const summaryId = this.getAttribute('id');
+			document.querySelectorAll('.review-span').forEach(span => {
+				if (!span.getAttribute('data-aligned-summaries').split(' ').includes(summaryId)) {
+					span.classList.remove('not-hover-highlight');
+					span.classList.add('highlight');
+					console.log('left!');
+				}
+				this.classList.remove('highlight');
+			});
+        });
+    });
+	
+	document.querySelectorAll('.review-span').forEach(span => {
+		span.addEventListener('mouseenter', function() {
+			document.querySelectorAll('.review-span').forEach(span => {
+				if (span !== this) {
+					span.classList.remove('highlight');
+					span.classList.add('not-hover-highlight');
+				}
+			});
+			const AlignSummariesId = this.getAttribute('data-aligned-summaries').split(' ');
+			document.querySelectorAll('.summary-sentence').forEach(sentence => {
+				if (AlignSummariesId.includes(sentence.getAttribute('id'))) {
+					sentence.classList.add('highlight');
+				}
+			});
+		});
+	});
+	
+	document.querySelectorAll('.review-span').forEach(span => {
+		span.addEventListener('mouseleave', function() {
+			const AlignSummariesId = this.getAttribute('data-aligned-summaries').split(' ');
+			document.querySelectorAll('.review-span').forEach(span => {
+				if (span !== this) {
+					span.classList.remove('not-hover-highlight');
+					span.classList.add('highlight');
+				}
+			});
+			document.querySelectorAll('.summary-sentence').forEach(sentence => {
+				if (AlignSummariesId.includes(sentence.getAttribute('id'))) {
+					sentence.classList.remove('highlight');
+				}
+			});
+		});
+	});
+	
+</script>
+</body>
+</html>

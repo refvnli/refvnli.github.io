@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Multi-Review Fusion-in-Context">
+  <meta property="og:title" content="Multi-Review Fusion-in-Context"/>
+  <meta property="og:description" content="Multi-Review Fusion-in-Context"/>
+  <meta property="og:url" content="https://fusereviews.github.io/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="Multi-Review Fusion-in-Context Benchmark">
+  <meta name="twitter:description" content="Multi-Review Fusion-in-Context">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/nitzangu_Albert_Einstein_holds_an_iphone_realistic_style_ba15ea7b-b829-478b-adef-b474ccf01a2a.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Vision-and-Language Benchmark, Synthetic and Compositional Images">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>FuseReviews</title>
+  <link rel="icon" sizes="128x128" type="image/x-icon" href="static/images/favicon4.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <style>
+    html {
+        scroll-behavior: smooth;
+    }
+    .light-background {
+      background-color: #9e9e9e0a;
+    }
+    /* Additional styles */
+  </style>
+</head>
+<body>
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">-->
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">FuseReviews<img src="static/images/favicon4.ico"  style="width: 9%; height: 9%; margin: -0.5% 1%"/> <br>
+              The Multi-Review Fusion-in-Context Benchmark</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://lovodkin93.github.io/" target="_blank">Aviv Slobodkin</a>,&nbsp;</span>
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/ori-shapira-73747426/" target="_blank">Ori Shapira</a>,&nbsp;</span>
+                  <span class="author-block">
+                    <a href="https://www.linkedin.com/in/ran-levy-3a62551a/" target="_blank">Ran Levy</a>,&nbsp;</span>
+                    <span class="author-block">
+                      <a href="https://u.cs.biu.ac.il/~dagani/" target="_blank">Ido Dagan</a>,&nbsp;</span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">Bar-Ilan University&nbsp;&nbsp;</span>
+                    <!-- <span class="author-block">Amazon Research</span><br> -->
+                      <br>
+                    <!-- Conference Logo Image -->
+                    <span class="author-block">
+                            <b>
+                                <img src="static/images/naacl_2024_logo-removebg-preview.png"  style="width: 70%; height: 70%" class="image-spacing"/>
+                            </b>
+
+                    </span>
+                  <br>
+                  </div>
+              <br>
+
+
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2403.15351" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            
+            <!-- Medium Link - TODO: AVIVSL -->
+            <!-- <span class="link-block">
+                  <a href="https://medium.com/@nitzanguetta/introducing-whoops-a-benchmark-of-commonsense-defying-synthetically-generated-images-6748268458e8" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Medium</span>
+                </a>
+              </span> -->
+
+                <!-- HuggingFace Link -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/lovodkin93/FuseReviews" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:20px">&#x1F917;</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+
+              <!-- Data Demonstration -->
+              <span class="link-block">
+                  <a href="#DatasetDemo"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:20px">&#x1F50E;</p>
+                  </span>
+                  <span>Data Demonstration</span>
+                </a>
+              </span>
+              
+              <!-- huggingface spaces explorer -->
+              <span class="link-block">
+                  <a href="https://huggingface.co/spaces/lovodkin93/FuseReviews" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:20px">&#x1F917;</p>
+                  </span>
+                  <span>Explorer</span>
+                </a>
+              </span>
+
+              <!-- task evaluation -->
+              <br />
+              <span class="link-block">
+                  <a href="https://colab.research.google.com/drive/1oUMbVNBMHxlZOg-tneq5_DVbW7X1mRt8?usp=sharing" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa fa-code"></i>
+                  </span>
+                  <span>Evaluation</span>
+                </a>
+              </span>
+
+
+              <!-- Github Link -->
+                 <!-- &lt;!&ndash; Github link &ndash;&gt; -->
+                 <span class="link-block">
+                  <a href="https://github.com/fusereviews/multi-review-fusion-in-context" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+
+              <!-- Leaderboard -->
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/lovodkin93/FuseReviews-Leaderboard" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <p style="font-size:20px">&#x1F917;</p>
+                </span>
+                <span>Leaderboard</span>
+              </a>
+            </span>
+
+
+
+              <!-- conference poster  - TODO: AVIVSL -->
+              <!-- <span class="link-block">
+                <a href="static/pdfs/whoops!_neurips_poster.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa fa-file"></i>
+                  </span>
+                  <span>NeurIPS poster</span>
+                </a>
+              </span> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Abstract
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left has-background-info-light pr-4 pl-4 pt-3 pb-3">
+         <p>
+          Grounded text generation, encompassing tasks such as long-form question-answering and summarization, necessitates both content selection and content consolidation. Current end-to-end methods are difficult to control and interpret due to their opaqueness.
+          Accordingly, recent works have proposed a modular approach, with separate components for each step. Specifically, we focus on the second subtask, of generating coherent text given pre-selected content in a multi-document setting. Concretely, we formalize <i>Fusion-in-Context</i> (FiC) as a standalone task, whose input consists of source texts with highlighted spans of targeted content. A model then needs to generate a coherent passage that includes all and only the target information.
+          Our work includes the development of a curated dataset of 1000 instances in the reviews domain, alongside a novel evaluation framework for assessing the faithfulness and coverage of highlights, which strongly correlate to human judgment. Several baseline models exhibit promising outcomes and provide insightful analyses.
+          This study lays the groundwork for further exploration of modular text generation in the multi-document setting, offering potential improvements in the quality and reliability of generated content.         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+        <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+          The Fusion-in-Context Task
+          </h2>
+        <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+        <p>
+          The <i>Fusion in Context</i> (FiC) task involves synthesizing a coherent text 
+          from a given set of documents, specifically focusing on pre-selected spans within these documents, 
+          referred to as <i>highlights</i>. 
+          Formally, for a collection of documents D with marked spans H={h_1, h_2, ..., h_n}, 
+          where each h_i could be disjoint, the goal is to produce a coherent and non-redundant text f
+          adhering to the following two criteria: 
+          <ol class="pr-2 pl-6">
+            <li><u>Highlight Faithfulness</u>: f must be collectively entailed by the content in H, adding only minimal non-highlighted content required for coherence.</li>
+            <li><u>Highlight Coverage</u>: each h_i must be represented in f, either explicitly, or via a generalized reference.</li>
+          </ol>          
+          <br><br>
+          <div style="text-align: center;">
+           <img src="static/images/task_example.PNG"  style="width: 50%; height: 50%"/>
+         </div>
+        </p>
+        </h3>
+     </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+          Dataset Annotation
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+          Given a document set and a corresponding reference summary from an existing multi-document summarization dataset, 
+          the annotation process aims to identify the spans in the source documents that cover all the information in summary. 
+          This approach simplifies the annotation process compared to annotating from scratch, i.e., reading documents, 
+          marking highlights according to some specifications, and writing a coherently-fused text, which is reminiscent 
+          of standard formation of multi-document summarization datasets. Conversely, our approach requires locating 
+          and aligning spans between the source text and the already available reference summary, essentially 
+          "reverse engineering" the original human summarization process.
+          To construct our dataset, we leverage existing multi-review summarization datas from the business reviews domain 
+          (<a href="https://aclanthology.org/2020.emnlp-main.337/">Brazinskas et al., 2020</a> and 
+          <a href="https://aclanthology.org/2022.findings-acl.261/">Iso et al., 2022</a>).
+          In total, we annotate 1000 instances of review-set with highlights/summary pairs. 
+           <br><br>
+           <div style="text-align: center;">
+            <img src="static/images/dataset_stats.PNG"  style="width: 80%; height: 80%"/>
+          </div>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Evaluation Framework
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+          To evaluate highlights faithfulness and coverage, we introduce two NLI-based evaluation metrics: 
+          for Faithfulness, we utilize the flan-t5-xxl model (<a href="https://arxiv.org/abs/2210.11416">Chung et al., 2020</a>) with an NLI prompt, 
+          and for Coverage, we finetune a flan-t5-large model (<a href="https://arxiv.org/abs/2210.11416">Chung et al., 2020</a>) 
+          using a syntactic dataset derived from our annotated FiC dataset. 
+          Our meta-evaluation, based on these metrics' correlation with human judgments across 
+          50 generated outputs, confirms their effectiveness in aligning with human judgments.
+           <br><br>
+           <div style="text-align: center;">
+            <img src="static/images/meta_evaluation.PNG"  style="width: 40%; height: 40%"/>
+          </div>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Test Results
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+           <p>
+            Our analyses reveal that GPT-4 exhibits a notable proficiency in ensuring highlights faithfulness coverage when provided with in-context examples. 
+            However, a finetuned version appears to slightly underperform in faithfulness compared to GPT-4, despite showing marginal improvements in coverage.
+            Further, we also perform an ablation study on our finetuned model, employing only concatenated highlights 
+            without the surrounding context (only-H)
+            We find that though it leads to an increase in faithfulness and coverage, this method significantly harms 
+            the coherence and non-redundancy nature of the output, as determined through manual evaluation via crowdsourcing.
+           </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/test_results.PNG"  style="width: 60%; height: 60%"/>
+         </p>
+         </h3>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+<!-- Dataset Demonstration -->
+<!-- Image carousel -->
+<section class="hero is-small" id="DatasetDemo">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+        Data Demonstration
+        </h2>
+      
+
+      <div id="results-carousel" class="carousel results-carousel light-background">
+        <div class="item">
+          <iframe src="static/demo_htmls/CocoTrip-few_cont-summ_34.html" width="100%" height="400"></iframe>
+        </div>
+
+        <div class="item">
+        <iframe src="static/demo_htmls/CocoTrip-dev_comm-inst_3_a_summ_1.html" width="100%" height="400"></iframe>
+      </div>
+
+      <div class="item">
+        <iframe src="static/demo_htmls/FewSum-val-property_7_summ_1.html" width="100%" height="400"></iframe>
+      </div>
+
+      <div class="item">
+        <iframe src="static/demo_htmls/FewSum-val-property_14_summ_1.html" width="100%" height="400"></iframe>
+      </div>
+
+
+      <div class="item">
+        <iframe src="static/demo_htmls/CocoTrip-dev_cont-inst_6_b_summ_1.html" width="100%" height="400"></iframe>
+      </div>
+
+      <div class="item">
+        <iframe src="static/demo_htmls/CocoTrip-dev_cont-inst_7_a_summ_0.html" width="100%" height="400"></iframe>
+      </div>
+
+      <div class="item">
+        <iframe src="static/demo_htmls/FewSum-val-property_16_summ_2.html" width="100%" height="400"></iframe>
+      </div>
+
+      <div class="item">
+        <iframe src="static/demo_htmls/CocoTrip-few_comm-summ_63.html" width="100%" height="400"></iframe>
+      </div>
+
+      <div class="item">
+        <iframe src="static/demo_htmls/FewSum-train-property_2_summ_2.html" width="100%" height="400"></iframe>
+      </div>
+
+      <div class="item">
+        <iframe src="static/demo_htmls/FewSum-val-property_21_summ_2.html" width="100%" height="400"></iframe>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End Dataset Demonstration -->
+
+
+<!-- Paper -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+        Paper
+        </h2>
+      <iframe  src="static/pdfs/FuseReviews_paper.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section>
+<!--End paper -->
+
+
+<!-- Leaderboard -->
+<script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.21.0/gradio.js"></script>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+        Leaderboard
+        </h2>
+      <div class="columns is-centered has-text-centered">
+          <div class="publication-video">
+            
+            <iframe src="https://lovodkin93-fusereviews-leaderboard.hf.space" frameborder="0" width="850" height="450"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!--End Leaderboard -->
+
+
+<!-- Data Explorer -->
+<script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.19.2/gradio.js"></script>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+        Data Explorer
+        </h2>
+      <div class="columns is-centered has-text-centered">
+          <div class="publication-video">
+            
+            <iframe src="https://lovodkin93-fusereviews.hf.space" frameborder="0" width="850" height="450"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!--End Data Explorer -->
+
+
+
+
+<!-- Paper poster - TODO: AVIVSL -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Paper</h2>
+      <iframe  src="static/pdfs/WHOOPS_paper.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+<!-- Youtube video - TODO: AVIVSL -->
+<!-- <section class="hero is-small">
+    <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+          <div class="publication-video">
+            <iframe frameborder="0" width="850" height="450" src="https://www.youtube.com/embed/rMhc50PvDn4?autoplay=1&mute=1&loop=1"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+</section> -->
+
+<!-- Image carousel  - TODO: AVIVSL -->
+<!-- <section class="hero is-small  is-light">
+  <div class="hero-body">
+    <div class="container">
+        <h2 class="title">Poster Presentations</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <img src="static/images/NeurIPS presentation n.jpeg" alt="MY ALT TEXT" style="width: 50%; height: 50%" class="center_caro_img"/>
+        <h2 class="subtitle has-text-centered">
+          NeurIPs Creative AI.
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/NeurIPS presentation y.jpeg" alt="MY ALT TEXT" style="width: 50%; height: 50%" class="center_caro_img"/>
+        <h2 class="subtitle has-text-centered">
+          NeurIPs Creative AI.
+        </h2>
+      </div>
+  </div>
+</div>
+</div>
+</section> -->
+<!-- End image carousel -->
+
+
+<!--huggingface leaderboard - TODO: AVIVSL -->
+<!-- <script
+	type="module"
+	src="https://gradio.s3-us-west-2.amazonaws.com/3.36.1/gradio.js"></script>
+<section class="hero is-small">
+    <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+          <div class="publication-video">
+            <gradio-app src="https://nlphuji-whoops-leaderboard.hf.space"></gradio-app>
+          </div>
+        </div>
+      </div>
+    </div>
+</section> -->
+
+
+
+<!--BibTex citation -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{slobodkin2024multireview,
+        
+        title = {Multi-Review Fusion-in-Context}, 
+        
+        author = {Aviv Slobodkin and Ori Shapira and Ran Levy and Ido Dagan},
+        
+        year = {2024},
+        
+        eprint = {2403.15351},
+        
+        archivePrefix = {arXiv},
+        
+        primaryClass = {cs.CL}
+  }</code></pre>
+    </div>
+</section>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p style="color:gray;font-size:9.9px;">
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>, is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+            <a href="https://www.flaticon.com/free-icons/magic" title="magic icons">Magic icons created by Freepik - Flaticon</a>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+  </body>
+  </html>
